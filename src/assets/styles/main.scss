@@ -1,0 +1,88 @@
+@import "./fonts.scss";
+@import "./variables.scss";
+@import "./mixins.scss";
+
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body,
+#app {
+    height: 100%;
+}
+
+body {
+    @include golos-regular;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @include golos-semi-bold;
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+div,
+p,
+input,
+form {
+    box-sizing: border-box;
+}
+
+ul,
+li {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+}
+
+.modal-enter-active {
+    transition: $transition;
+}
+
+.modal-leave-active {
+    transition: $transition;
+}
+
+.modal-enter-from,
+.modal-leave-to {
+    opacity: 0;
+}
+
+.notification-enter-active {
+    transition: $transition;
+}
+
+.notification-leave-active {
+    transition: $transition;
+}
+
+.notification-enter-from,
+.notification-leave-to {
+    opacity: 0;
+}

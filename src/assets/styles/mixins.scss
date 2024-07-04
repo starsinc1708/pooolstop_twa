@@ -1,0 +1,150 @@
+@mixin golos-regular {
+    font-family: "Golos-Regular", sans-serif;
+}
+
+@mixin golos-medium {
+    font-family: "Golos-Medium", sans-serif;
+}
+
+@mixin golos-semi-bold {
+    font-family: "Golos-SemiBold", sans-serif;
+}
+
+@mixin golos-bold {
+    font-family: "Golos-Bold", sans-serif;
+}
+
+@mixin input-reset {
+    @include golos-regular;
+    background: $gray-100;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    transition: $transition;
+    color: $txt-main;
+    border: 1px solid transparent;
+
+    &::placeholder {
+        opacity: 1;
+    }
+
+    &:hover,
+    &:focus {
+        border-color: $main;
+    }
+
+    &:disabled {
+        opacity: $opacity;
+
+        &:hover {
+            border-color: transparent;
+        }
+    }
+}
+
+@mixin button-reset {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+    transition: $transition;
+
+    &:disabled {
+        cursor: default;
+    }
+}
+
+@mixin main-outline {
+    @include golos-medium;
+    font-size: 14px;
+    line-height: 17px;
+    color: $main;
+    background: $white;
+    border: 1px solid $main;
+    padding: 15px 20px;
+    border-radius: 10px;
+
+    &:hover {
+        color: $main-hover;
+        border-color: $main-hover;
+    }
+
+    &:active {
+        color: $main-active;
+        border-color: $main-active;
+    }
+
+    &:disabled {
+        color: $main;
+        border-color: $main;
+        opacity: $opacity;
+    }
+}
+
+@mixin scrollbar {
+    scrollbar-color: rgba(65, 92, 107, 0.1) transparent;
+    scrollbar-width: thin;
+
+    &::-moz-scrollbar {
+        height: 4px;
+        border-radius: 10px;
+    }
+
+    &::-moz-scrollbar-thumb {
+        background-color: $gray-100;
+        height: 4px;
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar {
+        height: 4px;
+        background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $gray-100;
+        height: 4px;
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+}
+
+@mixin scrollbar-x {
+    @include scrollbar();
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 4px;
+}
+
+@mixin scrollbar-y {
+    @include scrollbar();
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+@mixin modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999999;
+    transition: $transition;
+}
+
+@mixin notification {
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000000;
+}
+
+@mixin tooltip {
+    position: absolute;
+    z-index: 99999;
+}
