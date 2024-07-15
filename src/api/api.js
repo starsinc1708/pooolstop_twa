@@ -4,7 +4,7 @@ import http from "@/api/http.js";
 import { PAGE_SIZE } from "@/utils/constants.js";
 import { getCookie } from "@/utils/functions";
 
-const AUTH_API_URL = "https://localhost:8003";
+const AUTH_API_URL = "https://localhost:8084";
 
 export default class Api {
     // AUTHORIZATION
